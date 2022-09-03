@@ -86,19 +86,34 @@
         <h1>Gostou do conteúdo?</h1>
         <p>Junte-se a equipe da Top 5 Alguma coisa</p>
         <form action="https://www.w3schools.com/action_page.php" method="get">
-            <label for="name">Qual o seu primeiro nome?</label>
-            <input type="text" name="name" id="name" required>
+            <label for="name">Qual o seu primeiro nome?</label> <br>
+            <input type="text" name="name" id="name"  maxlength="15" required>
 
-            <label for="guild">Guilda</label>
+            <br>
+
+            <label for="guild">Guilda</label> <br>
             <input type="text" name="guild" id="guild" value="Topeiro" readonly>
 
-            <label for="curiosity">Qual o seu nível de curiosidade?</label>
+            <br>
+        
+            <label for="curiosity">Qual o seu nível de curiosidade?</label> <br>
             <input type="number" name="curiosity" id="curiosity" min="25000" max="30000" required>
 
+            <br>
+            
             <label for="curiosity">Como prefere ser chamado(a)?</label>
             Curioso <input type="radio" name="call" value="Ele" id="call" required>
             Curiosa <input type="radio" name="call" value="Ela" id="call" required>
             Curiose <input type="radio" name="call" value="Neutro" id="call" required>
+            
+            <br>
+
+            <label for="curiosity">Deseja receber mais informações da página no seu e-mail?</label><br>
+            <input type="checkbox" name="more_infos" value="yes" id="more_infos"> Sim, eu desejo 
+
+            <br>
+            
+            <input type="submit" value="ENVIAR">
         </form>
     </article>
 </body>
