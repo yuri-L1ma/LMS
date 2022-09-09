@@ -36,5 +36,27 @@ ul li a{
     color: wheat;
     text-decoration: none;
     padding: 0 40px;
-    background-color: aliceblue;    
+}
+
+ul li.drop ul{
+    position: absolute;
+    display: none;
+    width: auto;
+    border: 1px solid black;
+    background: white;
+}
+ul li.drop ul li{
+    padding: 10px 20px;
+    display: block;
+    /* width: 100px; */
+}
+
+ul li.drop ul li a{
+    text-align: center;
+    padding: 0;
+    color: black;
+}
+
+.drop:hover .menu{
+    display: block;
 }

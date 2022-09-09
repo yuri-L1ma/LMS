@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .drop{
+            width: 200px;
+            text-align: center;
+        }
+
+        .drop .botao{
+            background-color: aqua;
+            padding: 12px;
+            cursor: pointer;
+        }
+
+        .drop .menu{
+            background-color: aquamarine;
+            position: absolute;
+            width: 200px;
+            display: none;
+        }
+
+        .drop:hover .menu{
+            display: block;
+        }
+
+        .drop .menu .link{
+            display: block;
+            text-decoration: none;
+            padding: 12px;
+        }
+
+        .drop .menu .link:hover {
+            background-color: rgb(110, 216, 181);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="drop">
+        <div class="botao">meu prim</div>
+        <div class="menu">
+            <a href="" class="link">Link 1</a>
+            <a href="" class="link">Link 2</a>
+            <a href="" class="link">Link 3</a>
+            <a href="" class="link">Link 4</a>
+        </div>
+    </div>
+    conteúdo
+</body>
+</html>
