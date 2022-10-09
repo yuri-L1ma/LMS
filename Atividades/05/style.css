@@ -1,0 +1,208 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Epilogue', sans-serif;
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: vernacular;
+    src: url(./assets/Oferta-do-Dia.ttf);
+}
+
+nav.main{
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 40px;
+    background-color: rgb(255, 249, 242);
+}
+
+nav.main ul{
+    list-style: none;
+    display: flex;
+}
+
+nav.main ul li a{
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    padding: 5px 40px;
+}
+
+nav.main ul li a:hover{
+    font-family: vernacular;
+}
+
+main{
+    display: flex;
+}
+
+main nav.left{
+    flex-basis: 350px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 800px;
+    background-color:rgb(255, 252, 93);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    position: relative;
+}
+
+main nav.left ul{
+    list-style: none;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+main nav.left ul li a{
+    color: black;
+    text-decoration: none;
+    font-weight: 900;
+    padding: 5px 40px;
+}
+
+main section{
+    width: 100%;
+}
+
+main section article{
+    display: flex;
+}
+
+.cel{
+    width: 100%;
+    height: 400px;
+}
+
+.c01{
+    background: orange;
+}
+
+.c01 div:nth-child(even){
+    background: rgb(255, 229, 182);
+}
+
+.c01 div{
+    padding: 10px;
+}
+
+.c01 div h1{
+    height: 40px;
+    cursor: pointer;
+    font-weight: 900;
+    color: blue;
+}
+
+.c01 div p{
+    height: 0px;
+    overflow: hidden;
+    transition: height 0.5s ease-out;
+}
+
+.c01 div:hover p{
+    height: 240px;
+}
+
+.c02{
+    background: blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.c02 img{
+    height: 100%;
+}
+
+.c02 div{
+    position: absolute;
+    top: calc(100% - 60px);
+    background-color: rgba(0, 0, 0, 0.555);
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.c03{
+    background: cyan
+}
+.c04{
+    background: pink
+}
+.c05{
+    background: maroon;
+}
+
+.imglouca{
+    width: 200px;
+    position: absolute;
+    z-index: 2;
+    animation-name: img;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes img {
+    0% {
+        top: 0%;
+        left: 0%;
+        transform: rotate(0);
+    }
+
+    20%{
+        top: 20%;
+        left: 50%;
+    }
+
+    40%{
+        top: 40%;
+        left: calc(100% - 200px);
+    }
+
+    60%{
+        top: 60%;
+        left: 50%;
+    }
+
+    80%{
+        top: 80%;
+        left: 0%;
+    }
+
+    100%{
+        top: 0%;
+        left: 0%;
+        transform: rotate(360deg);
+    }
+
+}
+
+@media screen and (max-width:768px) {
+    main{
+        flex-direction: column;
+    }
+    
+    nav.main{
+        box-shadow: none;
+    }
+
+    main nav.left{
+        flex-basis: 400px;
+        box-shadow: none;
+    }
+    
+    section article{
+        flex-direction: column;
+    }
+}
