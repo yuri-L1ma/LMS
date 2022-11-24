@@ -1,0 +1,318 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Epilogue', sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: black;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #474747
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+main.container{
+    /* width: 900px; */
+    width: 100vw;
+    height: 100vh;
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: 60px 1fr 1fr;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-areas: 
+    "header header header"
+    "inbox chat chat"
+    "inbox chat chat"
+    ;
+}
+
+main.container header{
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0c0c0b;
+}
+
+main.container header .logo{
+    width: 25%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+}
+
+main.container header .user{
+    font-size: 1.2rem;
+    margin: 0px 60px;
+    justify-self: flex-start;
+    color: white;
+}
+
+main.container .inbox {
+    grid-area: inbox;
+    position: relative;
+    background: #1d1d1d;
+}
+
+main.container .inbox .cards{
+    height: 100%;
+    overflow-y: auto;
+}
+
+main.container .inbox .cards .group{
+    width: 100%;
+    height: 65px;
+    border-bottom: 1px solid #7f7f7f37;
+    color: white;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all .2s ease;
+}
+
+main.container .inbox .cards .group.selected{
+    background: #3b3b3b;
+}
+
+main.container .inbox .cards .group:not(.group.selected):hover{
+    background: rgb(39, 39, 39);
+}
+
+main.container .inbox .cards .group .image-group{
+    width: 40px;
+    height: 40px;
+    background: thistle;
+    border-radius: 50%;
+    margin: 0px 25px;
+}
+
+main.container .inbox .cards .group span{
+    font-size: 0.9rem;
+}
+
+main.container .inbox button.create-group{
+    position: absolute;
+    width: 65px;
+    height: 65px;
+    bottom: 30px;
+    right: 30px;
+    border-radius: 100px;
+    background: #77c313;
+    border: none;
+    cursor: pointer;
+    transition: all .3s ease;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow: hidden;
+}
+
+main.container .inbox button.create-group span{
+    font-size: 1rem;
+    color: black;
+    font-weight: 600;
+    min-width: 90px;
+    display: none;
+}
+
+main.container .inbox button.create-group img{
+    background: #77c313;
+    width: 25px;
+}
+
+main.container .inbox button.create-group:hover{
+    /* transform: scale(1.1); */
+    width: 180px;
+}
+
+main.container .inbox button.create-group:hover span{
+    display: block;
+}
+
+main.container .chat{
+    grid-area: chat;
+    background: #1e1e1e;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+main.container .chat .messages{
+    height: 100%;
+    overflow-y: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+}
+
+main.container .chat .messages .message{
+    padding: 20px;
+    width: fit-content;
+    max-width: 50%;
+    background: #121212;
+    border-radius: 0px 20px 20px 20px;
+    margin: 15px 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+main.container .chat .messages .message.user{
+    background: #77c313;
+    align-self: flex-end;
+    border-radius: 20px 0px 20px 20px;
+    margin: 10px 30px;
+}
+
+main.container .chat .messages .message span{
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 200%;
+    color: white;   
+}
+
+main.container .chat .messages .message p{
+    font-size: 0.9rem;
+    font-weight: 200;
+    line-height: 200%;
+    color: white;
+}
+
+main.container .chat .messages .message.user p{
+    color: black;
+    font-weight: 500;
+}
+
+
+main.container .chat form{
+    width: 100%;
+    height: 90px;
+    background: #1e1e1e;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+main.container .chat form input{
+    width: 70%;
+    height: 60%;
+    background: #121212;
+    border-radius: 5px;
+    border:  none;
+    padding: 20px;
+    color: white;
+    font-size: 1rem;
+}
+
+main.container .chat form .send{
+    height: 60%;
+    width: 15%;
+    border-radius: 5px;
+    background: #333333;
+    border: none;
+    cursor: pointer;
+    transition: all .3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main.container .chat form .send:hover{
+    background: #535353;
+}
+
+main.container .chat form .send img{
+    transform: rotate(45deg);
+}
+
+main.container .chat form .send span{
+    font-size: 1rem;
+    color: #77c313;
+    width: fit-content;
+    font-weight: 600;
+    min-width: 90px;
+}
+
+dialog{
+    width: 500px;
+    background: #77c313;
+    border: none;
+    border-radius: 10px;
+    padding: 30px 50px;
+    transition: all .5s ease;
+    margin: auto;
+}
+
+dialog h1{
+    padding-bottom: 20px;
+}
+
+dialog p{
+    padding-top: 10px;
+    border-top: 2px solid black;
+    font-size: 1.2rem;
+    width: 200px;
+    line-height: 150%;
+    font-weight: 500;
+}
+
+dialog form{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0px;
+}
+
+dialog form input{
+    border: none;
+    background: white;
+    height: 50px;
+    font-size: 1rem;
+    padding: 0px 20px;
+    border-radius: 10px;
+}
+
+dialog form button{
+    height: 50px;
+    width: 200px;
+    align-self: flex-end;
+    margin-top: 20px;
+    background: black;
+    color: #77c313;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all .3s ease;
+}
+
+dialog form button:hover{
+    transform: scale(1.1);
+}
+
+dialog::backdrop{
+    background: #00000098;
+}
+
+dialog.new-group form .group-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-self: flex-end;
+    width: 80%;
+}
+
+dialog.new-group form .group-buttons button:first-child{
+    background-color: #b3dd7c;
+    border: none;
+    color: black;
+    width: 30%;
+}
